@@ -20,7 +20,7 @@
 3. 在项目下新建两个目录---testcase、report
 4. 将测试用例的excel文件放入testcase目录下
 5. 新建一个py文件，编写代码:'from sktest.run import Run'
-=======
+
 ***
 ## 测试用例示例
 ![case](http://m.qpic.cn/psc?/V54ePMDp3lDEZw32DPWK2XO6Tg3SZLRl/bqQfVz5yrrGYSXMvKr.cqbQQiYgAxkNv38AXv9gnccg2IsXqCs9QT2tlRC2PLHPBkWrD5HqJGWlkUGG.qPTpzms2NUzK*sNem3FaDRKvREg!/b&bo=wgREAwAAAAADB6M!&rf=viewer_4)
