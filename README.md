@@ -36,18 +36,13 @@
 ***
 # 自定义配置信息
     或者你可以尝试自己配置一些信息，在你创建的py文件修改这些配置信息
-<<<<<<< HEAD
 1. 自行配置测试用例文件的路径(excel_file_path)，无需再创建testcase目录
-2. 配置浏览器及driver(browser_name、executable_path)
+2. 配置浏览器及driver(browser_name、cfn.executable_path)
 3. 配置邮件信息(email_account、email_password、email_receiver、case_object_name)
-=======
-1. 自行配置测试用例文件的路径(cfn.excel_file_path)，无需再创建testcase目录
-2. 配置浏览器及driver(cfn.browser_name、cfn.executable_path)
-3. 配置邮件信息(cfn.email_account、email_password、email_receiver、case_object_name)
 # 待完成计划
 -[ ] 下个版本完善testcase、report目录自动创建（原本设计的时候就是这么考虑的，也是这样做的，但是似乎出了点小问题）
 -[ ] 页面的操作还不够全面，毕竟目前应该算是公测版本
 -[ ] 框架的整体容错性、稳定性测试尚未进行
 -[ ] 一些其他的细节处理
 -[ ] 考虑在后续要兼容移动端测试
->>>>>>> 4ade4b8073a9ebfb90148596f57a1d015aa565fe
+
