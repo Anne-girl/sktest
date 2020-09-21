@@ -13,9 +13,9 @@ header = {
     "元素": "ELEMENT",
     "测试数据": "DATA",
     "自动化标记": "FLAG",
-    "执行结果": "RESULT",
+    "步骤执行结果": "RESULT",
+    "用例预期结果": "EXPECTED",
     "执行时间": "RUNTIME",
-    "错误信息": "ERINFO",
 }
 
 keywords = {
@@ -46,6 +46,6 @@ element_wait_time = 10  # 元素查找超时时间 s
 page_flash_timeout = 90  # 页面刷新超时时间 s
 
 # driver路径
-ie_executable_path = ''
-chrome_executable_path = ''
-firefox_executable_path = ''
+# ie_executable_path = ''
+# chrome_executable_path = ''
+# firefox_executable_path = ''

@@ -6,6 +6,7 @@ from common.elements import el
 from common.acction import Action
 from common.globals import g
 from common.log import logger
+from common.snapshot import snapshot
 
 
 class TestCase:
@@ -13,18 +14,41 @@ class TestCase:
         self.test_case = test_case
 
     def run(self):
+        case_result = 'success'
+        # if self.test_case['flag'].upper() == 'Y':
+
+        g.case_run_num += 1
         for step in self.test_case['steps']:
-            logger.info("Run The Step: %s|%s|%s" % (int(float(step['step'])), step['operation'], step['element']))
+            logger.info(
+                ">>> Executed The Step: %s|%s|%s" % (int(float(step['step'])), step['operation'], step['element']))
             page = step['page']
             element = step['element']
             step['element'] = el.have(page, element)
+            step_result = 'ok'
             try:
                 getattr(Action, step['operation'].lower())(step)
-                logger.info("Run The Step: %s|%s|%s Success" % (int(float(step['step'])), step['operation'], step['element']))
-                self.test_case['result'] = 'ok'
+                logger.info(
+                    ">>> Executed The Step: %s|%s|%s Successfully" % (
+                        int(float(step['step'])), step['operation'], step['element']))
                 sleep(0.3)
             except:
-                self.test_case['result'] = 'err'
-                logger.info("Run The Step: %s|%s|%s Fail" % (int(float(step['step'])), step['operation'], step['element']))
-            g.result.append(self.test_case['result'])
-        sleep(0.5)
+                string_ = step['operation'] + step['element'] + '.png'
+                snapshot(string_)
+                step_result = 'err'
+                case_result = 'fail'
+                logger.info(
+                    "Executed The Step: %s|%s|%s Failure" % (
+                        int(float(step['step'])), step['operation'], step['element']))
+            g.step_result.append(step_result)
+
+        if self.test_case['expected'] == case_result:
+            g.case_result.append(
+                [self.test_case['id'], self.test_case['title'], self.test_case['expected'], case_result, 'pass'])
+        else:
+            g.case_result.append(
+                [self.test_case['id'], self.test_case['title'], self.test_case['expected'], case_result, 'failure'])
+            # else:
+            #     case_result = 'skipped'
+            #     g.case_result.append(
+            #         [self.test_case['id'], self.test_case['title'], self.test_case['expected'], case_result, 'skipped'])
+            sleep(0.5)
