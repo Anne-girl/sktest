@@ -19,12 +19,8 @@
 2. 安装sktest
 3. 在项目下新建两个目录---testcase、report
 4. 将测试用例的excel文件放入testcase目录下
-<<<<<<< HEAD
 5. 新建一个py文件，编写代码:'from sktest.run import Run'
 =======
-5. 新建一个py文件，编写代码:'from sktest import run'
->>>>>>> 4ade4b8073a9ebfb90148596f57a1d015aa565fe
-6. 运行这个py文件
 ***
 ## 测试用例示例
 ![case](http://m.qpic.cn/psc?/V54ePMDp3lDEZw32DPWK2XO6Tg3SZLRl/bqQfVz5yrrGYSXMvKr.cqbQQiYgAxkNv38AXv9gnccg2IsXqCs9QT2tlRC2PLHPBkWrD5HqJGWlkUGG.qPTpzms2NUzK*sNem3FaDRKvREg!/b&bo=wgREAwAAAAADB6M!&rf=viewer_4)
